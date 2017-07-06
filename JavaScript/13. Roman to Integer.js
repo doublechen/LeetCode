@@ -6,39 +6,29 @@
  * @return {number}
  *
  * https://leetcode.com/submissions/detail/108587758/
+ * https://leetcode.com/submissions/detail/108588734/
  */
 var romanToInt = function(s) {
 	var sl = s.length;
-    var map = new Map();
-    map.set("M",1000);
-    map.set("D",500);
-    map.set("C",100);
-    map.set("L",50);
-    map.set("X",10);
-    map.set("V",5);
-    map.set("I",1);
+    var map = {
+        I:1,
+        V:5,
+        X:10,
+        L:50,
+        C:100,
+        D:500,
+        M:1000,
+    }
     
-	var res = [];
 	var sum = 0;
 
     for (var i = 0; i < sl; i++) {
-    	if (i == 0 ) {
-    		res.push(s[0]);
-            
+    	if (map[s[i]] < map[s[i+1]]) {
+    		sum += map[s[++i]] - map[s[i]];
     	} else {
-    		if(map.get(s[i-1]) < map.get(s[i])){
-    			res[res.length - 1] = s[i-1] + s[i];
-    		} else {
-                res.push(s[i]);
-            }
+    		sum += map[s[i]]
     	}
     }
-    for (var j = res.length - 1; j >= 0; j--) {
-    	if (res[j].length == 1) {
-    		sum += map.get(res[j]);
-    	} else {
-    		sum += map.get(res[j][1]) - map.get(res[j][0]);
-    	}
-    }
+    
     return sum;
 };
