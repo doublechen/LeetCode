@@ -12,8 +12,6 @@
  * @return {number[]}
  */
 
-//---------solution 1----------
-
 var twoSum = function(nums, target) {
     var lnums = nums.length;
     for(var i = 0 ; i < lnums; i++){
@@ -24,28 +22,3 @@ var twoSum = function(nums, target) {
         }
     }
 };
-
-//----------------------------
-
-//-----------solution 2--------
-
-var twoSum = function(nums, target) {
-    
-};
-
-var quickSort = function(arr) {
-　　if (arr.length <= 1) { return arr; }
-　　var pivotIndex = Math.floor(arr.length / 2);
-　　var pivot = arr.splice(pivotIndex, 1)[0];
-　　var left = [];
-　　var right = [];
-　　for (var i = 0; i < arr.length; i++){
-　　　　if (arr[i] < pivot) {
-　　　　　　left.push(arr[i]);
-　　　　} else {
-　　　　　　right.push(arr[i]);
-　　　　}
-　　}
-　　return quickSort(left).concat([pivot], quickSort(right));
-};
-//----------------------------
