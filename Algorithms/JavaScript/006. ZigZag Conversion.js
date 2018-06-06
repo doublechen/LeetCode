@@ -2,25 +2,25 @@
  *
  * https://leetcode-cn.com/submissions/detail/2949402/
  * 
- * 将字符串 "PAYPALISHIRING" 以Z字形排列成给定的行数：
+ * The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
  * 
  * P   A   H   N
  * A P L S I I G
  * Y   I   R
- * 之后从左往右，逐行读取字符："PAHNAPLSIIGYIR"
+ * And then read line by line: "PAHNAPLSIIGYIR"
  * 
- * 实现一个将字符串进行指定行数变换的函数:
+ * Write the code that will take a string and make this conversion given a number of rows:
  * 
  * string convert(string s, int numRows);
- * 示例 1:
+ * Example 1:
  * 
- * 输入: s = "PAYPALISHIRING", numRows = 3
- * 输出: "PAHNAPLSIIGYIR"
- * 示例 2:
+ * Input: s = "PAYPALISHIRING", numRows = 3
+ * Output: "PAHNAPLSIIGYIR"
+ * Example 2:
  * 
- * 输入: s = "PAYPALISHIRING", numRows = 4
- * 输出: "PINALSIGYAHRPI"
- * 解释:
+ * Input: s = "PAYPALISHIRING", numRows = 4
+ * Output: "PINALSIGYAHRPI"
+ * Explanation:
  * 
  * P     I    N
  * A   L S  I G
