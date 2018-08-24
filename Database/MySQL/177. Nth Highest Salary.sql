@@ -14,11 +14,13 @@
 # +------------------------+
 # | 200                    |
 # +------------------------+
-# 
+# https://leetcode-cn.com/submissions/detail/6019951/
 
 CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
 BEGIN
+  DECLARE m int;
+  SET m = N - 1;
   RETURN (
-    
-    );
+      select Salary from (select distinct(Salary) from Employee order by Salary desc limit N) as topSalarys limit m,1
+  );
 END
